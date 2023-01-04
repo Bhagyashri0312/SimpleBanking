@@ -16,26 +16,25 @@ public class bankManagement { // these class provides all
     static String sql = "";
     public static boolean
     createAccount(String name,
-                  int passCode) // create account function
+                  int passCode)
     {
         try {
-// validation
             if (name == "" || passCode == NULL) {
                 System.out.println("All Field Required!");
                 return false;
             }
-// query
+
             Statement st = con.createStatement();
             sql = "INSERT INTO customer(cname,balance,pass_code) values('"
                     + name + "',1000," + passCode + ")";
 
-// Execution
+
             if (st.executeUpdate(sql) == 1) {
                 System.out.println(name
                         + ", Now You Login!");
                 return true;
             }
-// return
+
         }
         catch (SQLIntegrityConstraintViolationException e) {
             System.out.println("Username Not Available!");
@@ -49,12 +48,10 @@ public class bankManagement { // these class provides all
     loginAccount(String name, int passCode) // login method
     {
         try {
-// validation
             if (name == "" || passCode == NULL) {
                 System.out.println("All Field Required!");
                 return false;
             }
-// query
             sql = "select * from customer where cname='"
                     + name + "' and pass_code=" + passCode;
             PreparedStatement st

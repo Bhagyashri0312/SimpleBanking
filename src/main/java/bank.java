@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class bank {
-    public static void main(String args[]) //main class of bank
+    public static void main(String args[])
             throws IOException
     {
 
@@ -11,7 +11,6 @@ public class bank {
                 new InputStreamReader(System.in));
         String name = "";
         int pass_code;
-        int ac_no;
         int ch;
 
         while (true) {
@@ -21,7 +20,7 @@ public class bank {
             System.out.println("2)Login Account");
 
             try {
-                System.out.print("\n Enter Input:"); //user input
+                System.out.print("\n Enter Input:");
                 ch = Integer.parseInt(sc.readLine());
 
                 switch (ch) {
@@ -38,16 +37,16 @@ public class bank {
                             if (bankManagement.createAccount(
                                     name, pass_code)) {
                                 System.out.println(
-                                        "MSG : Account Created Successfully!\n");
+                                        "Account Created Successfully!\n");
                             }
                             else {
                                 System.out.println(
-                                        "ERR : Account Creation Failed!\n");
+                                        "Account Creation Failed!\n");
                             }
                         }
                         catch (Exception e) {
                             System.out.println(
-                                    " ERR : Enter Valid Data::Insertion Failed!\n");
+                                    "Enter Valid Data::Insertion Failed!\n");
                         }
                         break;
 
@@ -64,16 +63,16 @@ public class bank {
                             if (bankManagement.loginAccount(
                                     name, pass_code)) {
                                 System.out.println(
-                                        "MSG : Logout Successfully!\n");
+                                        "Logout Successfully!\n");
                             }
                             else {
                                 System.out.println(
-                                        "ERR : login Failed!\n");
+                                        "login Failed!\n");
                             }
                         }
                         catch (Exception e) {
                             System.out.println(
-                                    " ERR : Enter Valid Data::Login Failed!\n");
+                                    "Enter Valid Data::Login Failed!\n");
                         }
 
                         break;

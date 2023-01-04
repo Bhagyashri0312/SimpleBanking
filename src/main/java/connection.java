@@ -1,19 +1,18 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
-// Global connection Class
 public class connection {
-    static Connection con; // Global Connection Object
+    static Connection con;
     public static Connection getConnection()
     {
         try {
 
 
             String mysqlJDBCDriver
-                    = "com.mysql.cj.jdbc.Driver"; //jdbc driver
+                    = "com.mysql.cj.jdbc.Driver";
             String url
-                    = "jdbc:mysql://localhost:3306/simple_bank"; //mysql url
-            String user = "root"; //mysql username
-            String pass = "Krishna123"; //mysql passcode
+                    = "jdbc:mysql://localhost:3306/simple_bank";
+            String user = "root";
+            String pass = "Krishna123";
             Class.forName(mysqlJDBCDriver);
             con = DriverManager.getConnection(url, user,
                     pass);
