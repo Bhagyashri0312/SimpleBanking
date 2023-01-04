@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 
-public class bankManagement { // these class provides all
+public class bankManagement {
 // bank method
 
     private static final int NULL = 0;
